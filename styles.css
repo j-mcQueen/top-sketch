@@ -1,0 +1,30 @@
+html {
+    font-family: 'Patrick Hand SC', cursive;
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #E8E3CC;
+    border-radius: 0 5px 0 0;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+footer a {
+    display: inline-block;
+    text-decoration: none;
+    color: #DB3F29;
+}
+
+footer a:hover {
+    color: #0B1F65;
+    transition: 0.4s;
+}
