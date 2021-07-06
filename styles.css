@@ -1,15 +1,36 @@
 html {
     font-family: 'Patrick Hand SC', cursive;
-    height: 100vh;
 }
 
 body {
     margin: 0;
+    background-color: #DB3F29;
+}
+
+body, html {
+    height: 100%;
+    display: grid;
+}
+
+#toy-container {
+    margin: auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 25px 50px -20px, rgba(0, 0, 0, 0.25) 0px 15px 20px -30px, rgba(10, 37, 64, 0.9) 0px -1px 6px 0px inset;
+    border-radius: 25px;
+    width: 1000px;
+    height: 750px; 
+    /* height and width here are for testing dimensions, not for actual use */
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 36px;
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    left: 0;
     background-color: #E8E3CC;
     border-radius: 0 5px 0 0;
     padding: 16px;
