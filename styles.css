@@ -7,13 +7,12 @@ body {
     background-color: #DB3F29;
 }
 
-body, html {
-    height: 100%;
-    display: grid;
-}
-
 #toy-container {
+    display: grid;
+    grid-template-columns: 150px 700px 150px;
+    grid-template-rows: 125px 500px 125px;
     margin: auto;
+    margin-top: 50px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 25px 50px -20px, rgba(0, 0, 0, 0.25) 0px 15px 20px -30px, rgba(10, 37, 64, 0.9) 0px -1px 6px 0px inset;
     border-radius: 25px;
     width: 1000px;
@@ -21,8 +20,32 @@ body, html {
     /* height and width here are for testing dimensions, not for actual use */
 }
 
+#options-container {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+#squares-container {
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(16, 30px);
+    justify-content: center;
+    overflow: hidden;
+}
+
+.square {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
 h1 {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: center;
     text-align: center;
+    margin: 0;
     color: white;
     font-size: 36px;
 }
