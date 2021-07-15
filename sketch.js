@@ -1,8 +1,9 @@
 let squareBox = document.querySelector("#squares-container");
 
-for (let i = 0; i < 256; i++) {
+for (let i = 0; i < 4096; i++) {
     let square = document.createElement("div");
     square.className = "square";
+    squareBox.style.gridTemplateColumns = "repeat(64, auto)";
     squareBox.appendChild(square);
 }
 
