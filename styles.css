@@ -1,5 +1,6 @@
 html {
     font-family: 'Tourney', cursive;
+    min-width: 300px;
     font-size: 10px;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -88,11 +89,6 @@ main {
                 rgba(0, 0, 0, 0.25) 0px 15px 20px -30px,
                 rgba(10, 37, 64, 0.9) 0px -1px 6px 0px inset;
     border: none;
-}
-
-#buttons-container button:hover {
-    transform: scale(0.9);
-    transition: 0.2s;
 }
 
 #black {
