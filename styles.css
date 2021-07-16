@@ -53,12 +53,13 @@ main {
     grid-row: 2;
     display: grid;
     grid-template-rows: auto;
-    overflow: hidden;
+    /* overflow: hidden; */
     border-radius: 2px;
 }
 
 .square {
     background-color: white;
+    margin: 1px;
     border-radius: 2px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px 0px, 
                 rgba(0, 0, 0, 0.25) 0px 3px 0px -5px,
@@ -130,20 +131,15 @@ footer {
 }
 
 footer p {
-    font-family: 'Della Respira', serif;
     background-color: #E8E3CC;
     border-radius: 5px 5px 0 0;
     padding: 15px 50px;
+    font-family: 'Della Respira', serif;
     font-size: 18px;
     font-weight: 600;
     text-align: center;
     margin: 0;
     transform: translateY(45px);
-}
-
-footer p:hover {
-    transform: translateY(0);
-    transition: 0.3s;
 }
 
 footer a {
