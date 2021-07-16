@@ -33,6 +33,23 @@ buttons.forEach(button => button.addEventListener("mouseout", function() {
     button.style.transition = "0.2s";
 }));
 
+let black = document.querySelector("#black");
+let reset = document.querySelector("#reset");
+
+let blackSquares = function() {
+    squares.forEach(square => square.addEventListener("mouseover", function() {
+        square.style.backgroundColor = "black";
+    }));
+}
+
+black.addEventListener("click", blackSquares);
+
+let resetSquares = function() {
+    squares.forEach(square => square.style.backgroundColor = "white");
+}
+
+reset.addEventListener("click", resetSquares);
+
 let footer = document.querySelector("footer p");
 
 let showFooter = function() {
@@ -52,3 +69,6 @@ footer.addEventListener("mouseout", hideFooter);
 
 // create a function which handles the random color hover effect
 // call the function on hover
+
+// If button is clicked, then mouse hover changes the background colour of the squares
+// mouseover event listener inside a click event listener?
