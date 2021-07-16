@@ -28,7 +28,9 @@ main {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr;
     grid-template-rows: 1fr 3fr 1fr;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 25px 50px -20px, rgba(0, 0, 0, 0.25) 0px 15px 20px -30px, rgba(10, 37, 64, 0.9) 0px -1px 6px 0px inset;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 25px 50px -20px, 
+                rgba(0, 0, 0, 0.25) 0px 15px 20px -30px,
+                rgba(10, 37, 64, 0.9) 0px -1px 6px 0px inset;
     border-radius: 25px;
 }
 
@@ -52,12 +54,15 @@ main {
     display: grid;
     grid-template-rows: auto;
     overflow: hidden;
-    border: 1px solid black;
+    border-radius: 2px;
 }
 
 .square {
     background-color: white;
-    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px 0px, 
+                rgba(0, 0, 0, 0.25) 0px 3px 0px -5px,
+                rgba(10, 37, 64, 0.5) 0px -3px 3px 0px inset;
 }
 
 #options-container {
@@ -75,15 +80,38 @@ main {
 #buttons-container button {
     align-self: center;
     border-radius: 5px;
+    padding: 25px 50px;
     cursor: pointer;
     width: 25%;
-    padding: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 25px 50px -20px, 
+                rgba(0, 0, 0, 0.25) 0px 15px 20px -30px,
+                rgba(10, 37, 64, 0.9) 0px -1px 6px 0px inset;
+    border: none;
 }
 
-#rainbow {
-    background: rgb(211,0,255);
-    background: linear-gradient(90deg, rgba(211,0,255,1) 0%, rgba(151,0,255,1) 10%, rgba(113,0,255,1) 20%, rgba(51,89,215,1) 30%, rgba(0,153,255,1) 40%, rgba(0,255,224,1) 50%, rgba(112,255,112,1) 60%, rgba(243,255,0,1) 70%, rgba(255,147,0,1) 80%, rgba(255,74,0,1) 90%, rgba(255,0,0,1) 100%); 
-    border: none;
+#buttons-container button:hover {
+    transform: scale(0.9);
+    transition: 0.2s;
+}
+
+#black {
+    background-color: rgb(34, 34, 34);
+}
+
+#greyscale {
+    background: linear-gradient(to bottom right, black, lightgray);
+}
+
+#choose {
+    background: radial-gradient(circle at 50% 0, rgba(255,0,0,.5),rgba(255,0,0,0) 70.71%),
+                radial-gradient(circle at 6.7% 75%,rgba(0,0,255,.5),rgba(0,0,255,0) 70.71%),
+                radial-gradient(circle at 93.3% 75%,rgba(0,255,0,.5),rgba(0,255,0,0) 70.71%) beige;
+}
+
+#random {
+    background: radial-gradient(circle at 50% 0, rgb(137, 189, 158, 0.75),rgba(255,0,0,0) 70.71%),
+                radial-gradient(circle at 6.7% 75%,rgb(60, 21, 59, 0.75),rgba(0,0,255,0) 70.71%),
+                radial-gradient(circle at 93.3% 75%,rgb(219, 76, 64, 0.75),rgba(0,255,0,0) 70.71%) beige;
 }
 
 h1 {
