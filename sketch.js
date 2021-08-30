@@ -34,20 +34,32 @@ buttons.forEach(button => button.addEventListener("mouseout", function() {
 }));
 
 let black = document.querySelector("#black");
+let grayscale = document.querySelector("#greyscale");
 let reset = document.querySelector("#reset");
 
 let blackSquares = function() {
     squares.forEach(square => square.addEventListener("mouseover", function() {
-        square.style.backgroundColor = "black";
+        square.style.backgroundColor = "rgb(60, 60, 60)";
     }));
 }
 
-// click black square button
-// toggle class of black square
-// if class = black square, make the background color of the square black on mouseover
-// if class =/= black square, make the background color of the square white on mouseover
-
 black.addEventListener("click", blackSquares);
+
+let darkerSquares = function() {
+    let r = 240;
+    let g = 240;
+    let b = 240;
+
+    squares.forEach(square => square.addEventListener("mouseover", function() {
+        square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+        r -= 0.6;
+        g -= 0.6;
+        b -= 0.6;
+    }));
+}
+
+greyscale.addEventListener("click", darkerSquares);
 
 let resetSquares = function() {
     squares.forEach(square => square.style.backgroundColor = "white");
@@ -55,11 +67,14 @@ let resetSquares = function() {
 
 reset.addEventListener("click", function() { 
     resetSquares();
-    
+
     squares.forEach(square => square.addEventListener("mouseover", function() {
         square.style.backgroundColor = "white";
     }));
 });
+
+// create a loop
+// after each mouseover, add 5% more black to the background color
 
 let footer = document.querySelector("footer p");
 
