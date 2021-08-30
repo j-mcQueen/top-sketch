@@ -42,6 +42,11 @@ let blackSquares = function() {
     }));
 }
 
+// click black square button
+// toggle class of black square
+// if class = black square, make the background color of the square black on mouseover
+// if class =/= black square, make the background color of the square white on mouseover
+
 black.addEventListener("click", blackSquares);
 
 let resetSquares = function() {
