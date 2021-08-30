@@ -53,7 +53,13 @@ let resetSquares = function() {
     squares.forEach(square => square.style.backgroundColor = "white");
 }
 
-reset.addEventListener("click", resetSquares);
+reset.addEventListener("click", function() { 
+    resetSquares();
+    
+    squares.forEach(square => square.addEventListener("mouseover", function() {
+        square.style.backgroundColor = "white";
+    }));
+});
 
 let footer = document.querySelector("footer p");
 
