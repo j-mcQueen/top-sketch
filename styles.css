@@ -79,7 +79,7 @@ main {
     height: 100%;
 }
 
-#buttons-container button {
+#buttons-container button, #buttons-container input {
     align-self: center;
     border-radius: 5px;
     padding: 25px 50px;
