@@ -1,5 +1,5 @@
 html {
-    font-family: 'Tourney', cursive;
+    font-family: 'Gluten', cursive;
     min-width: 300px;
     font-size: 10px;
     overflow-x: hidden;
@@ -118,7 +118,7 @@ h1 {
     text-align: center;
     margin: 0;
     color: white;
-    font-size: 3.3vh;
+    font-size: 6vh;
 }
 
 footer {
