@@ -1,4 +1,4 @@
-let squareBox = document.querySelector("#squares-container");
+let squareBox = document.querySelector(".squares-cntr");
 squareBox.style.gridTemplateColumns = "repeat(16, auto)";
 
 for (let i = 0; i < 256; i++) {
@@ -20,17 +20,17 @@ squares.forEach(square => square.addEventListener("mouseout", function() {
 }));
 
 
-let button = document.querySelector("#buttons-container button");
-let buttons = document.querySelectorAll("#buttons-container button");
+let btn = document.querySelector(".btns-cntr button");
+let btns = document.querySelectorAll(".btns-cntr button");
 
-buttons.forEach(button => button.addEventListener("mouseover", function() {
-    button.style.transform = "scale(0.9)";
-    button.style.transition = "0.2s";
+btns.forEach(btn => btn.addEventListener("mouseover", function() {
+    btn.style.transform = "scale(0.9)";
+    btn.style.transition = "0.2s";
 }));
 
-buttons.forEach(button => button.addEventListener("mouseout", function() {
-    button.style.transform = "none";
-    button.style.transition = "0.2s";
+btns.forEach(btn => btn.addEventListener("mouseout", function() {
+    btn.style.transform = "none";
+    btn.style.transition = "0.2s";
 }));
 
 let black = document.querySelector("#black");
@@ -96,5 +96,5 @@ footer.addEventListener("mouseout", hideFooter);
 // create a function which handles the random color hover effect
 // call the function on hover
 
-// If button is clicked, then mouse hover changes the background colour of the squares
+// If btn is clicked, then mouse hover changes the background colour of the squares
 // mouseover event listener inside a click event listener?
