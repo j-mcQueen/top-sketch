@@ -1,11 +1,15 @@
-let squareBox = document.querySelector(".squares-cntr");
-squareBox.style.gridTemplateColumns = "repeat(16, auto)";
-
-for (let i = 0; i < 256; i++) {
-    let newSquare = document.createElement("div");
-    newSquare.className = "square";
-    squareBox.appendChild(newSquare);
+let createSquares = function() {
+    let squareBox = document.querySelector(".squares-cntr");
+    squareBox.style.gridTemplateColumns = "repeat(16, auto)";
+    
+    for (let i = 0; i < 256; i++) {
+        let newSquare = document.createElement("div");
+        newSquare.className = "square";
+        squareBox.appendChild(newSquare);
+    }
 }
+
+createSquares();
 
 let square = document.querySelector(".square");
 let squares = document.querySelectorAll(".square");
@@ -34,7 +38,7 @@ btns.forEach(btn => btn.addEventListener("mouseout", function() {
 }));
 
 let black = document.querySelector("#black");
-let grayscale = document.querySelector("#greyscale");
+let greyscale = document.querySelector("#greyscale");
 let reset = document.querySelector("#reset");
 
 let blackSquares = function() {
@@ -51,11 +55,11 @@ let darkerSquares = function() {
     let b = 240;
 
     squares.forEach(square => square.addEventListener("mouseover", function() {
-        square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-
         r -= 0.6;
         g -= 0.6;
         b -= 0.6;
+
+        square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
     }));
 }
 
