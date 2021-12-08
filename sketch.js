@@ -24,7 +24,6 @@ squares.forEach(square => square.addEventListener("mouseout", function() {
     square.style.transform = "none";
 }));
 
-
 let btn = document.querySelector(".btns-cntr button");
 let btns = document.querySelectorAll(".btns-cntr button");
 
