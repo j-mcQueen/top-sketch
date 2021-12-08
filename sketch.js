@@ -16,22 +16,22 @@ createSquares();
 let square = document.querySelector(".square");
 let squares = document.querySelectorAll(".square");
 
-squares.forEach(square => square.addEventListener("mouseover", function() {
+squares.forEach(square => square.addEventListener("mouseover", () => {
     square.setAttribute("style", "transform: scale(1.3); transition: 0.1s");
 }));
 
-squares.forEach(square => square.addEventListener("mouseout", function() {
+squares.forEach(square => square.addEventListener("mouseout", () => {
     square.style.transform = "none";
 }));
 
 let btn = document.querySelector(".btns-cntr button");
 let btns = document.querySelectorAll(".btns-cntr button");
 
-btns.forEach(btn => btn.addEventListener("mouseover", function() {
+btns.forEach(btn => btn.addEventListener("mouseover", () => {
     btn.setAttribute("style", "transform: scale(0.9); transition: 0.2s");
 }));
 
-btns.forEach(btn => btn.addEventListener("mouseout", function() {
+btns.forEach(btn => btn.addEventListener("mouseout", () => {
     btn.setAttribute("style", "transform: none; transition: 0.2s");
 }));
 
@@ -40,7 +40,7 @@ let greyscale = document.querySelector("#greyscale");
 let reset = document.querySelector("#reset");
 
 let blackSquares = function() {
-    squares.forEach(square => square.addEventListener("mouseover", function() {
+    squares.forEach(square => square.addEventListener("mouseover", () => {
         square.style.backgroundColor = "rgb(60, 60, 60)";
     }));
 }
@@ -66,7 +66,7 @@ let darkerSquares = function() {
     let g = 240;
     let b = 240;
 
-    squares.forEach(square => square.addEventListener("mouseover", function() {
+    squares.forEach(square => square.addEventListener("mouseover", () => {
         r -= 0.6;
         g -= 0.6;
         b -= 0.6;
@@ -81,10 +81,10 @@ let resetSquares = function() {
     squares.forEach(square => square.style.backgroundColor = "white");
 }
 
-reset.addEventListener("click", function() { 
+reset.addEventListener("click", () => { 
     resetSquares();
 
-    squares.forEach(square => square.addEventListener("mouseover", function() {
+    squares.forEach(square => square.addEventListener("mouseover", () => {
         square.style.backgroundColor = "white";
     }));
 });
