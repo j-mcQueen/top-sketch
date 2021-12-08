@@ -24,8 +24,8 @@ squares.forEach(square => square.addEventListener("mouseout", () => {
     square.style.transform = "none";
 }));
 
-let btn = document.querySelector(".btns-cntr button");
-let btns = document.querySelectorAll(".btns-cntr button");
+let btnCntr = document.querySelector(".btns-cntr");
+let btns = btnCntr.childNodes;
 
 btns.forEach(btn => btn.addEventListener("mouseover", () => {
     btn.setAttribute("style", "transform: scale(0.9); transition: 0.2s");
