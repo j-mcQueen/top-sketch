@@ -95,7 +95,7 @@ reset.addEventListener("click", () => {
 let footer = document.querySelector("footer p");
 
 let showFooter = function() {
-    footer.setAttribute("style", "transform: translateY(0); transition: 0.3s");
+    footer.setAttribute("style", "transform: translateY(5px); transition: 0.3s");
 }
 
 let hideFooter = function() {
