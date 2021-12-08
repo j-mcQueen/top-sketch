@@ -17,8 +17,7 @@ let square = document.querySelector(".square");
 let squares = document.querySelectorAll(".square");
 
 squares.forEach(square => square.addEventListener("mouseover", function() {
-    square.style.transform = "scale(1.3)";
-    square.style.transition = "0.1s";
+    square.setAttribute("style", "transform: scale(1.3); transition: 0.1s");
 }));
 
 squares.forEach(square => square.addEventListener("mouseout", function() {
@@ -30,13 +29,11 @@ let btn = document.querySelector(".btns-cntr button");
 let btns = document.querySelectorAll(".btns-cntr button");
 
 btns.forEach(btn => btn.addEventListener("mouseover", function() {
-    btn.style.transform = "scale(0.9)";
-    btn.style.transition = "0.2s";
+    btn.setAttribute("style", "transform: scale(0.9); transition: 0.2s");
 }));
 
 btns.forEach(btn => btn.addEventListener("mouseout", function() {
-    btn.style.transform = "none";
-    btn.style.transition = "0.2s";
+    btn.setAttribute("style", "transform: none; transition: 0.2s");
 }));
 
 let black = document.querySelector("#black");
@@ -99,13 +96,11 @@ reset.addEventListener("click", function() {
 let footer = document.querySelector("footer p");
 
 let showFooter = function() {
-    footer.style.transform = "translateY(0)";
-    footer.style.transition = "0.3s";
+    footer.setAttribute("style", "transform: translateY(0); transition: 0.3s");
 }
 
 let hideFooter = function() {
-    footer.style.transform = "translateY(45px)";
-    footer.style.transition = "0.3s";
+    footer.setAttribute("style", "transform: translateY(45px); transition: 0.3s");
 }
 
 footer.addEventListener("mouseover", showFooter);
