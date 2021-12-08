@@ -1,6 +1,6 @@
 // createSquares will need an update as a range counter for the slider is implemented
 
-let createSquares = function() {
+let createSquares = () => {
     let squareBox = document.querySelector(".squares-cntr");
     squareBox.style.gridTemplateColumns = "repeat(16, auto)";
     
@@ -39,7 +39,7 @@ let black = document.querySelector("#black");
 let greyscale = document.querySelector("#greyscale");
 let reset = document.querySelector("#reset");
 
-let blackSquares = function() {
+let blackSquares = () => {
     squares.forEach(square => square.addEventListener("mouseover", () => {
         square.style.backgroundColor = "rgb(60, 60, 60)";
     }));
@@ -61,7 +61,7 @@ black.addEventListener("click", blackSquares);
  
 //  Tried using e.currentTarget.style.backgroundColor = "..." to change the background color of the individual square on which the event fired, but it seems to be functionally equivalent to the variable 'square'
 
-let darkerSquares = function() {
+let darkerSquares = () => {
     let r = 240;
     let g = 240;
     let b = 240;
@@ -77,7 +77,7 @@ let darkerSquares = function() {
 
 greyscale.addEventListener("click", darkerSquares);
 
-let resetSquares = function() {
+let resetSquares = () => {
     squares.forEach(square => square.style.backgroundColor = "white");
 }
 
