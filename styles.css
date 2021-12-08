@@ -3,7 +3,6 @@ html {
     min-width: 300px;
     font-size: 10px;
     overflow-x: hidden;
-    overflow-y: hidden;
 }
 
 body {
@@ -19,8 +18,6 @@ main {
 }
 
 .toy-cntr {
-    grid-column: 2;
-    grid-row: 2;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 2fr 1fr;
@@ -50,7 +47,6 @@ main {
     grid-row: 2;
     display: grid;
     grid-template-rows: auto;
-    /* overflow: hidden; */
     border-radius: 2px;
 }
 
@@ -124,6 +120,8 @@ footer {
 }
 
 footer p {
+    position: fixed;
+    bottom: 0;
     background-color: #E8E3CC;
     border-radius: 5px 5px 0 0;
     padding: 15px 50px;
