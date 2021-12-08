@@ -1,3 +1,5 @@
+// createSquares will need an update as a range counter for the slider is implemented
+
 let createSquares = function() {
     let squareBox = document.querySelector(".squares-cntr");
     squareBox.style.gridTemplateColumns = "repeat(16, auto)";
