@@ -16,24 +16,32 @@ createSquares();
 let square = document.querySelector(".square");
 let squares = document.querySelectorAll(".square");
 
-squares.forEach(square => square.addEventListener("mouseover", () => {
-    square.setAttribute("style", "transform: scale(1.3); transition: 0.1s");
-}));
+let squareTransitions = () => {
+    squares.forEach(square => square.addEventListener("mouseover", () => {
+        square.setAttribute("style", "transform: scale(1.3); transition: 0.1s");
+    }));
+    
+    squares.forEach(square => square.addEventListener("mouseout", () => {
+        square.style.transform = "none";
+    }));
+}
 
-squares.forEach(square => square.addEventListener("mouseout", () => {
-    square.style.transform = "none";
-}));
+squareTransitions();
 
-let btnCntr = document.querySelector(".btns-cntr");
-let btns = btnCntr.childNodes;
+let buttonTransitions = () => {
+    let btnCntr = document.querySelector(".btns-cntr");
+    let btns = btnCntr.childNodes;
+    
+    btns.forEach(btn => btn.addEventListener("mouseover", () => {
+        btn.setAttribute("style", "transform: scale(0.9); transition: 0.2s");
+    }));
+    
+    btns.forEach(btn => btn.addEventListener("mouseout", () => {
+        btn.setAttribute("style", "transform: none; transition: 0.2s");
+    }));
+}
 
-btns.forEach(btn => btn.addEventListener("mouseover", () => {
-    btn.setAttribute("style", "transform: scale(0.9); transition: 0.2s");
-}));
-
-btns.forEach(btn => btn.addEventListener("mouseout", () => {
-    btn.setAttribute("style", "transform: none; transition: 0.2s");
-}));
+buttonTransitions();
 
 let blackSquares = () => {
     let blackBtn = document.querySelector("#black");
@@ -94,13 +102,17 @@ let chooseColor = () => {
         }));
     }
     
-    colorPickerBtn.addEventListener("click", colorSquares);
+    colorPickerBtn.addEventListener("click", setColor);
 }
 
 chooseColor();
 
 let randomRgb = () => {
     let randomColorBtn = document.querySelector("#random");
+
+    // let r = ;
+    // let g = ;
+    // let b = ;
 }
 
 randomRgb();
