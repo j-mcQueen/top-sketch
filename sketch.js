@@ -89,13 +89,17 @@ colorPickerBtn.addEventListener("click", colorSquares);
 
 let randomColorBtn = document.querySelector("#random");
 
-let resetBtn = document.querySelector("#reset");
+let clearSquares = () => {
+    let resetBtn = document.querySelector("#reset");
 
-let resetSquares = () => {
-    squares.forEach(square => square.style.backgroundColor = "white");
+    let resetSquares = () => {
+        squares.forEach(square => square.style.backgroundColor = "white");
+    }
+    
+    resetBtn.addEventListener("click", resetSquares); 
 }
 
-resetBtn.addEventListener("click", resetSquares); 
+clearSquares();
 
 // create a loop
 // after each mouseover, add 5% more black to the background color
