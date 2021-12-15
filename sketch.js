@@ -77,15 +77,19 @@ let darkerSquares = () => {
 
 greyscaleBtn.addEventListener("click", darkerSquares);
 
-let colorPickerBtn = document.querySelector("#picker");
+let chooseColor = () => {
+    let colorPickerBtn = document.querySelector("#picker");
 
-let colorSquares = () => {
-    squares.forEach(square => square.addEventListener("mouseover", () => {
-        square.style.backgroundColor = colorPickerBtn.value;
-    }));
+    let colorSquares = () => {
+        squares.forEach(square => square.addEventListener("mouseover", () => {
+            square.style.backgroundColor = colorPickerBtn.value;
+        }));
+    }
+    
+    colorPickerBtn.addEventListener("click", colorSquares);
 }
 
-colorPickerBtn.addEventListener("click", colorSquares);
+chooseColor();
 
 let randomColorBtn = document.querySelector("#random");
 
