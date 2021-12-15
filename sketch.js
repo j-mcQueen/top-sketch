@@ -35,11 +35,7 @@ btns.forEach(btn => btn.addEventListener("mouseout", () => {
     btn.setAttribute("style", "transform: none; transition: 0.2s");
 }));
 
-let black = document.querySelector("#black");
-let greyscale = document.querySelector("#greyscale");
-let colorPicker = document.querySelector("#picker");
-let randomColor = document.querySelector("#random");
-let reset = document.querySelector("#reset");
+let blackBtn = document.querySelector("#black");
 
 let blackSquares = () => {
     squares.forEach(square => square.addEventListener("mouseover", () => {
@@ -47,7 +43,7 @@ let blackSquares = () => {
     }));
 }
 
-black.addEventListener("click", blackSquares);
+blackBtn.addEventListener("click", blackSquares);
 
 // darker squares problem
 
@@ -63,6 +59,8 @@ black.addEventListener("click", blackSquares);
  
 // Tried using e.currentTarget.style.backgroundColor = "..." to change the background color of the individual square on which the event fired, but it seems to be functionally equivalent to the variable 'square'
 
+let greyscaleBtn = document.querySelector("#greyscale");
+
 let darkerSquares = () => {
     let r = 240;
     let g = 240;
@@ -77,19 +75,27 @@ let darkerSquares = () => {
     }));
 }
 
-greyscale.addEventListener("click", darkerSquares);
+greyscaleBtn.addEventListener("click", darkerSquares);
+
+let colorPickerBtn = document.querySelector("#picker");
+
+let colorSquares = () => {
+    squares.forEach(square => square.addEventListener("mouseover", () => {
+        square.style.backgroundColor = colorPickerBtn.value;
+    }));
+}
+
+colorPickerBtn.addEventListener("click", colorSquares);
+
+let randomColorBtn = document.querySelector("#random");
+
+let resetBtn = document.querySelector("#reset");
 
 let resetSquares = () => {
     squares.forEach(square => square.style.backgroundColor = "white");
 }
 
-reset.addEventListener("click", () => { 
-    resetSquares();
-
-    squares.forEach(square => square.addEventListener("mouseover", () => {
-        square.style.backgroundColor = "white";
-    }));
-});
+resetBtn.addEventListener("click", resetSquares); 
 
 // create a loop
 // after each mouseover, add 5% more black to the background color
