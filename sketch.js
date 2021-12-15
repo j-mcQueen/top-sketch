@@ -35,6 +35,8 @@ btns.forEach(btn => btn.addEventListener("mouseout", () => {
     btn.setAttribute("style", "transform: none; transition: 0.2s");
 }));
 
+
+
 let blackBtn = document.querySelector("#black");
 
 let blackSquares = () => {
@@ -59,23 +61,27 @@ blackBtn.addEventListener("click", blackSquares);
  
 // Tried using e.currentTarget.style.backgroundColor = "..." to change the background color of the individual square on which the event fired, but it seems to be functionally equivalent to the variable 'square'
 
-let greyscaleBtn = document.querySelector("#greyscale");
+let greyscaleSquares = () => {
+    let greyscaleBtn = document.querySelector("#greyscale");
 
-let darkerSquares = () => {
-    let r = 240;
-    let g = 240;
-    let b = 240;
+    let addBlack = () => {
+        let r = 240;
+        let g = 240;
+        let b = 240;
+    
+        squares.forEach(square => square.addEventListener("mouseover", () => {
+            r -= 0.6;
+            g -= 0.6;
+            b -= 0.6;
+    
+            square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        }));
+    }
+    
+    greyscaleBtn.addEventListener("click", addBlack);
+};
 
-    squares.forEach(square => square.addEventListener("mouseover", () => {
-        r -= 0.6;
-        g -= 0.6;
-        b -= 0.6;
-
-        square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-    }));
-}
-
-greyscaleBtn.addEventListener("click", darkerSquares);
+greyscaleSquares();
 
 let chooseColor = () => {
     let colorPickerBtn = document.querySelector("#picker");
