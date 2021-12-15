@@ -1,6 +1,18 @@
-// createSquares will need an update as a range counter for the slider is implemented
-
 let createSquares = () => {
+    let slider = document.querySelector("#dimensions");
+    let sliderPara = document.querySelector(".slider-value p");
+    let sliderDefault = slider.getAttribute("value");
+
+    sliderPara.textContent = sliderDefault;
+
+    slider.addEventListener("input", (e) => {
+        let sliderValue = e.currentTarget.value;
+
+        sliderPara.textContent = sliderValue;
+    });
+
+    // think of a way to reset the slider's position on refresh/ load
+
     let squareBox = document.querySelector(".squares-cntr");
     squareBox.style.gridTemplateColumns = "repeat(16, auto)";
     
