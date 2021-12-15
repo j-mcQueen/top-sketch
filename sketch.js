@@ -110,9 +110,18 @@ chooseColor();
 let randomRgb = () => {
     let randomColorBtn = document.querySelector("#random");
 
-    // let r = ;
-    // let g = ;
-    // let b = ;
+    let setRandom = () => {
+    
+        squares.forEach(square => square.addEventListener("mouseover", () => {
+            let randomInt = (min, max) => {
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+
+            square.style.backgroundColor = `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
+        }));
+    }
+
+    randomColorBtn.addEventListener("click", setRandom);
 }
 
 randomRgb();
