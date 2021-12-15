@@ -100,18 +100,22 @@ resetBtn.addEventListener("click", resetSquares);
 // create a loop
 // after each mouseover, add 5% more black to the background color
 
-let footer = document.querySelector("footer p");
+let displayFooter = () => {
+    let footer = document.querySelector("footer p");
 
-let showFooter = function() {
-    footer.setAttribute("style", "transform: translateY(5px); transition: 0.3s");
+    let showFooter = function() {
+        footer.setAttribute("style", "transform: translateY(5px); transition: 0.3s");
+    }
+    
+    let hideFooter = function() {
+        footer.setAttribute("style", "transform: translateY(45px); transition: 0.3s");
+    }
+    
+    footer.addEventListener("mouseover", showFooter);
+    footer.addEventListener("mouseout", hideFooter);   
 }
 
-let hideFooter = function() {
-    footer.setAttribute("style", "transform: translateY(45px); transition: 0.3s");
-}
-
-footer.addEventListener("mouseover", showFooter);
-footer.addEventListener("mouseout", hideFooter);
+displayFooter();
 
 // you might have to specify the size of the squares in javascript for all dimension options
 
