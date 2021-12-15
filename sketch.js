@@ -35,17 +35,19 @@ btns.forEach(btn => btn.addEventListener("mouseout", () => {
     btn.setAttribute("style", "transform: none; transition: 0.2s");
 }));
 
-
-
-let blackBtn = document.querySelector("#black");
-
 let blackSquares = () => {
-    squares.forEach(square => square.addEventListener("mouseover", () => {
-        square.style.backgroundColor = "rgb(60, 60, 60)";
-    }));
+    let blackBtn = document.querySelector("#black");
+
+    let setBlack = () => {
+        squares.forEach(square => square.addEventListener("mouseover", () => {
+            square.style.backgroundColor = "rgb(60, 60, 60)";
+        }));
+    }
+    
+    blackBtn.addEventListener("click", setBlack);
 }
 
-blackBtn.addEventListener("click", blackSquares);
+blackSquares();
 
 // darker squares problem
 
@@ -86,7 +88,7 @@ greyscaleSquares();
 let chooseColor = () => {
     let colorPickerBtn = document.querySelector("#picker");
 
-    let colorSquares = () => {
+    let setColor = () => {
         squares.forEach(square => square.addEventListener("mouseover", () => {
             square.style.backgroundColor = colorPickerBtn.value;
         }));
