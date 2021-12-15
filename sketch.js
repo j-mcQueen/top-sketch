@@ -91,7 +91,11 @@ let chooseColor = () => {
 
 chooseColor();
 
-let randomColorBtn = document.querySelector("#random");
+let randomRgb = () => {
+    let randomColorBtn = document.querySelector("#random");
+}
+
+randomRgb();
 
 let clearSquares = () => {
     let resetBtn = document.querySelector("#reset");
