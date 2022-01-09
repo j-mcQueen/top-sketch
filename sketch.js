@@ -1,5 +1,5 @@
 let createSquares = () => {
-    let slider = document.querySelector("#dimensions");
+    let slider = document.getElementById("dimensions");
     let sliderPara = document.querySelector(".slider-value p");
     let sliderDefault = slider.getAttribute("value");
 
@@ -10,8 +10,6 @@ let createSquares = () => {
 
         sliderPara.textContent = sliderValue;
     });
-
-    // think of a way to reset the slider's position on refresh/ load
 
     let squareBox = document.querySelector(".squares-cntr");
     squareBox.style.gridTemplateColumns = "repeat(16, auto)";
@@ -56,7 +54,7 @@ let buttonTransitions = () => {
 buttonTransitions();
 
 let blackSquares = () => {
-    let blackBtn = document.querySelector("#black");
+    let blackBtn = document.getElementById("black");
 
     let setBlack = () => {
         squares.forEach(square => square.addEventListener("mouseover", () => {
@@ -84,7 +82,7 @@ blackSquares();
 // Tried using e.currentTarget.style.backgroundColor = "..." to change the background color of the individual square on which the event fired, but it seems to be functionally equivalent to the variable 'square'
 
 let greyscaleSquares = () => {
-    let greyscaleBtn = document.querySelector("#greyscale");
+    let greyscaleBtn = document.getElementById("greyscale");
 
     let addBlack = () => {
         let r = 240;
@@ -106,7 +104,7 @@ let greyscaleSquares = () => {
 greyscaleSquares();
 
 let chooseColor = () => {
-    let colorPickerBtn = document.querySelector("#picker");
+    let colorPickerBtn = document.getElementById("picker");
 
     let setColor = () => {
         squares.forEach(square => square.addEventListener("mouseover", () => {
@@ -120,7 +118,7 @@ let chooseColor = () => {
 chooseColor();
 
 let randomRgb = () => {
-    let randomColorBtn = document.querySelector("#random");
+    let randomColorBtn = document.getElementById("random");
 
     let setRandom = () => {
     
@@ -139,7 +137,7 @@ let randomRgb = () => {
 randomRgb();
 
 let clearSquares = () => {
-    let resetBtn = document.querySelector("#reset");
+    let resetBtn = document.getElementById("reset");
 
     let resetSquares = () => {
         squares.forEach(square => square.style.backgroundColor = "white");
@@ -156,11 +154,11 @@ clearSquares();
 let displayFooter = () => {
     let footer = document.querySelector("footer p");
 
-    let showFooter = function() {
+    let showFooter = () => {
         footer.setAttribute("style", "transform: translateY(5px); transition: 0.3s");
     }
     
-    let hideFooter = function() {
+    let hideFooter = () => {
         footer.setAttribute("style", "transform: translateY(45px); transition: 0.3s");
     }
     
