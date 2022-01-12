@@ -7,6 +7,102 @@ let createSquares = (dimension) => {
         newSquare.className = "square";
         squareBox.appendChild(newSquare);
     }
+
+    let square = document.querySelector(".square");
+    let squares = document.querySelectorAll(".square");
+
+    let squareTransitions = () => {
+        squares.forEach(square => square.addEventListener("mouseover", () => {
+            square.setAttribute("style", "transform: scale(1.3); transition: 0.1s");
+        }));
+        
+        squares.forEach(square => square.addEventListener("mouseout", () => {
+            square.style.transform = "none";
+        }));
+    }
+
+    squareTransitions();
+
+    let blackSquares = () => {
+        let blackBtn = document.getElementById("black");
+    
+        let setBlack = () => {
+            squares.forEach(square => square.addEventListener("mouseover", () => {
+                square.style.backgroundColor = "rgb(60, 60, 60)";
+            }));
+        }
+        
+        blackBtn.addEventListener("click", setBlack);
+    }
+    
+    blackSquares();
+
+    let greyscaleSquares = () => {
+        let greyscaleBtn = document.getElementById("greyscale");
+    
+        let addBlack = () => {
+            let r = 240;
+            let g = 240;
+            let b = 240;
+        
+            squares.forEach(square => square.addEventListener("mouseover", () => {
+                r -= 0.6;
+                g -= 0.6;
+                b -= 0.6;
+        
+                square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            }));
+        }
+        
+        greyscaleBtn.addEventListener("click", addBlack);
+    };
+    
+    greyscaleSquares();
+
+    let chooseColor = () => {
+        let colorPickerBtn = document.getElementById("picker");
+    
+        let setColor = () => {
+            squares.forEach(square => square.addEventListener("mouseover", () => {
+                square.style.backgroundColor = colorPickerBtn.value;
+            }));
+        }
+        
+        colorPickerBtn.addEventListener("click", setColor);
+    }
+    
+    chooseColor();
+
+    let randomRgb = () => {
+        let randomColorBtn = document.getElementById("random");
+    
+        let setRandom = () => {
+        
+            squares.forEach(square => square.addEventListener("mouseover", () => {
+                let randomInt = (min, max) => {
+                    return Math.floor(Math.random() * (max - min + 1) + min);
+                }
+    
+                square.style.backgroundColor = `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
+            }));
+        }
+    
+        randomColorBtn.addEventListener("click", setRandom);
+    }
+    
+    randomRgb();
+    
+    let clearSquares = () => {
+        let resetBtn = document.getElementById("reset");
+    
+        let resetSquares = () => {
+            squares.forEach(square => square.style.backgroundColor = "white");
+        }
+        
+        resetBtn.addEventListener("click", resetSquares); 
+    }
+    
+    clearSquares();
 }
 
 window.addEventListener("load", createSquares(16));
@@ -37,21 +133,6 @@ slider.addEventListener("input", (e) => {
     createSquares(sliderValue);
 });
 
-let square = document.querySelector(".square");
-let squares = document.querySelectorAll(".square");
-
-let squareTransitions = () => {
-    squares.forEach(square => square.addEventListener("mouseover", () => {
-        square.setAttribute("style", "transform: scale(1.3); transition: 0.1s");
-    }));
-    
-    squares.forEach(square => square.addEventListener("mouseout", () => {
-        square.style.transform = "none";
-    }));
-}
-
-squareTransitions();
-
 let buttonTransitions = () => {
     let btnCntr = document.querySelector(".btns-cntr");
     let btns = btnCntr.childNodes;
@@ -67,20 +148,6 @@ let buttonTransitions = () => {
 
 buttonTransitions();
 
-let blackSquares = () => {
-    let blackBtn = document.getElementById("black");
-
-    let setBlack = () => {
-        squares.forEach(square => square.addEventListener("mouseover", () => {
-            square.style.backgroundColor = "rgb(60, 60, 60)";
-        }));
-    }
-    
-    blackBtn.addEventListener("click", setBlack);
-}
-
-blackSquares();
-
 // darker squares problem
 // - how the code currently works
  
@@ -91,73 +158,6 @@ blackSquares();
  
 // - possible solutions
 // Tried using e.currentTarget.style.backgroundColor = "..." to change the background color of the individual square on which the event fired, but it seems to be functionally equivalent to the variable 'square'
-
-let greyscaleSquares = () => {
-    let greyscaleBtn = document.getElementById("greyscale");
-
-    let addBlack = () => {
-        let r = 240;
-        let g = 240;
-        let b = 240;
-    
-        squares.forEach(square => square.addEventListener("mouseover", () => {
-            r -= 0.6;
-            g -= 0.6;
-            b -= 0.6;
-    
-            square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-        }));
-    }
-    
-    greyscaleBtn.addEventListener("click", addBlack);
-};
-
-greyscaleSquares();
-
-let chooseColor = () => {
-    let colorPickerBtn = document.getElementById("picker");
-
-    let setColor = () => {
-        squares.forEach(square => square.addEventListener("mouseover", () => {
-            square.style.backgroundColor = colorPickerBtn.value;
-        }));
-    }
-    
-    colorPickerBtn.addEventListener("click", setColor);
-}
-
-chooseColor();
-
-let randomRgb = () => {
-    let randomColorBtn = document.getElementById("random");
-
-    let setRandom = () => {
-    
-        squares.forEach(square => square.addEventListener("mouseover", () => {
-            let randomInt = (min, max) => {
-                return Math.floor(Math.random() * (max - min + 1) + min);
-            }
-
-            square.style.backgroundColor = `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
-        }));
-    }
-
-    randomColorBtn.addEventListener("click", setRandom);
-}
-
-randomRgb();
-
-let clearSquares = () => {
-    let resetBtn = document.getElementById("reset");
-
-    let resetSquares = () => {
-        squares.forEach(square => square.style.backgroundColor = "white");
-    }
-    
-    resetBtn.addEventListener("click", resetSquares); 
-}
-
-clearSquares();
 
 let displayFooter = () => {
     let footer = document.querySelector("footer p");
