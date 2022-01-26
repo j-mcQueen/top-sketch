@@ -1,15 +1,18 @@
 # top-sketch
 
-My development repository of a sketchpad/ Etch-A-Sketch hybrid. Choose colour settings and draw pictures with your mouse.
+This project was developed as part of The Odin Project's Foundations course. Check out my [live version](https://silverwish.github.io/top-sketch/) of the toy.
 
-## what i've learned
+## new things i've learned
 
 - how to use setAttribute to create clean code when applying multiple styles to an element in JS
 - how to use arrow functions to remove code litter from the consistent use of function()
+- how to take advantage of changes in an input element's value using the input event listener
+- the importance of the local and global scope
 
 ## biggest challenges
 
--  building the slider function which changes the dimensions of the grid 
+- building the slider function which changes the dimensions of the grid
+- understanding how the toy container box shadow works to create it's effect
 
 ## technologies used
 
