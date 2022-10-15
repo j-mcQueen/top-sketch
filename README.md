@@ -1,6 +1,6 @@
 # top-sketch
 
-This project was developed as part of The Odin Project's Foundations course. Check out my [live version](https://silverwish.github.io/top-sketch/) of the toy.
+This project was developed as part of The Odin Project's Foundations course. Check out my [live version](https://j-mcQueen.github.io/top-sketch/) of the toy.
 
 ## new things i've learned
 
